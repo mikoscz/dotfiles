@@ -100,11 +100,11 @@ Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'awetzel/elixir.nvim'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'fishbullet/deoplete-ruby'
+"Plug 'carlitux/deoplete-ternjs'
+"Plug 'fishbullet/deoplete-ruby'
 
 "Comments:
 Plug 'tpope/vim-commentary'
@@ -115,7 +115,7 @@ Plug 'godlygeek/tabular'
 "Ruby
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rails'
 
 "Yaml
 Plug 'lmeijvogel/vim-yaml-helper'
@@ -225,8 +225,9 @@ let g:airline_symbols.whitespace = 'Ξ'
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
-nnoremap \ :Ag<SPACE>
 nnoremap <leader>2 <C-n> :NERDTreeToggle<CR>
+nmap \| :NERDTreeFind<CR>
+nmap \ :NERDTreeToggle<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
@@ -286,3 +287,4 @@ nnoremap N Nzz
 " Last and next jump should center too.
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
+nnoremap <C-\> :Ag<Space>-Q<Space>''<Left>
