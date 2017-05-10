@@ -78,6 +78,9 @@ set undolevels=200
 "Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" Show commands as they are entered
+set showcmd
+
 call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'xolox/vim-misc'
@@ -100,11 +103,11 @@ Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
 
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'awetzel/elixir.nvim'
-"Plug 'carlitux/deoplete-ternjs'
-"Plug 'fishbullet/deoplete-ruby'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'fishbullet/deoplete-ruby'
 
 "Comments:
 Plug 'tpope/vim-commentary'
@@ -143,7 +146,11 @@ Plug 'vimwiki/vimwiki'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'jiangmiao/auto-pairs'
+
+" Plug 'terryma/vim-multiple-cursors'
 call plug#end()
+
+let g:multi_cursor_exit_from_visual_mode = 0
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if (has("termguicolors"))
@@ -260,6 +267,7 @@ autocmd! BufWritePost * Neomake
 
 "use ESLint
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 " neomake
 nmap <Leader><Space>o :lopen<CR>      " open location window
