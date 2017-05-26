@@ -150,6 +150,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
+let g:mustache_abbreviations = 1
 let g:multi_cursor_exit_from_visual_mode = 0
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
