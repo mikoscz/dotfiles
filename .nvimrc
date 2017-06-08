@@ -18,6 +18,9 @@ nnoremap <CR> :noh<CR><CR>
 nmap <C-k> ddkP
 nmap <C-j> ddp
 
+nmap <S-f> :Neoformat<CR>
+vmap <S-t> :Tabularize /
+
 "Mouse support
 set mouse=a
 
@@ -146,6 +149,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'jiangmiao/auto-pairs'
+
+"Linting
+Plug 'sbdchd/neoformat'
 
 " Plug 'terryma/vim-multiple-cursors'
 call plug#end()
@@ -297,3 +303,8 @@ nnoremap N Nzz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 nnoremap <C-\> :Ag<Space>-Q<Space>''<Left>
+
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--single-quote']
+            \ }
