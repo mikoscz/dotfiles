@@ -1,0 +1,96 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias foreman='nocorrect foreman'
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Uncomment this to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(brew cap capistrano coffee cp encode64 extract gem git git-extras git-hubflow git-remote-branch github heroku node npm osx rails rake ruby rvm ssh-agent textmate thor vagrant zsh-syntax-highlighting scala z zsh-autosuggestions alias-tips)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/Users/michalstaskiewicz/.rvm/gems/ruby-2.3.3@ntbackend/bin
+
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+
+export NVM_DIR="/Users/michalstaskiewicz/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# TheFuck
+eval $(thefuck --alias)
+
+# Rails aliases
+alias rdd='rake db:drop'
+alias rdc='rake db:create'
+alias rdm='rake db:migrate'
+alias rddcm='rake db:drop db:create db:migrate'
+alias rddcms='rake db:drop db:create db:migrate db:seed'
+alias rc='rails c'
+alias rs='rails s'
+alias rsd='rails s -d'
+alias rk='kill `cat tmp/pids/server.pid`'
+alias rl='tail -f log/development.log'
+alias gdf='g diff'
+alias rbc='rubocop -a'
+alias gs='git status -s'
+alias gdc='git diff --cached'
+alias aliasall='{ alias; git aliases;  } | sort'
+alias gccm='gco milestones-v3.7'
+alias yodapush='ggpush -f'
+alias krysia="git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'"
+alias papiesz="cat ~/tmp/jp2.txt"
+alias blyat="cat ~/tmp/blyat.txt"
+alias gclean="git clean -f"
+alias v="nvim ."
+alias iexm="iex  --erl \"-kernel shell_history enabled\" -S mix"
+# added by travis gem
+
+alias pietpass="rails r 'puts User.find_by_email(\"piet.neirinck@vtelligence.com\").update(password: \"secret\")'"
+[ -f /Users/michalstaskiewicz/.travis/travis.sh ] && source /Users/michalstaskiewicz/.travis/travis.sh
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
