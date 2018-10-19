@@ -41,7 +41,7 @@ alias foreman='nocorrect foreman'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew cap capistrano coffee cp encode64 extract gem git git-extras git-hubflow git-remote-branch github heroku node npm osx rails rake ruby rvm ssh-agent textmate thor vagrant zsh-syntax-highlighting scala z zsh-autosuggestions alias-tips)
+plugins=(brew cp encode64 extract gem git git-extras git-hubflow git-remote-branch github heroku node npm osx rails rake ruby rvm ssh-agent zsh-syntax-highlighting z zsh-autosuggestions fzf-zsh)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,7 +50,7 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:/Users/michalstaskiewicz/.rvm/gems/ruby-2.3.3@ntbackend/bin
+export PATH=$PATH:/Users/mikoscz/.rvm/gems/ruby-2.3.3@ntbackend/bin
 
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -59,11 +59,8 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
-export NVM_DIR="/Users/michalstaskiewicz/.nvm"
+export NVM_DIR="/Users/mikoscz/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# TheFuck
-eval $(thefuck --alias)
 
 # Rails aliases
 alias rdd='rake db:drop'
@@ -88,9 +85,42 @@ alias papiesz="cat ~/tmp/jp2.txt"
 alias blyat="cat ~/tmp/blyat.txt"
 alias gclean="git clean -f"
 alias v="nvim ."
-alias iexm="iex  --erl \"-kernel shell_history enabled\" -S mix"
+alias c="code ."
+alias t="tig"
+
+# Elixir aliases
+
+alias iexm="iex -S mix"
+alias iexp="iex -S mix phx.server"
+
+# Docker aliases
+alias dkall="docker kill $(docker ps -q)"
+
+export ERL="-kernel shell_history_path \"$HOME/.elixir-history\" $ERL"
+
 # added by travis gem
 
 alias pietpass="rails r 'puts User.find_by_email(\"piet.neirinck@vtelligence.com\").update(password: \"secret\")'"
-[ -f /Users/michalstaskiewicz/.travis/travis.sh ] && source /Users/michalstaskiewicz/.travis/travis.sh
+[ -f /Users/mikoscz/.travis/travis.sh ] && source /Users/mikoscz/.travis/travis.sh
 export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+
+# Add iex history
+export ERL_AFLAGS="-kernel shell_history enabled"
+alias iex='iex --erl "-kernel shell_history enabled"'
+
+# Pyenv setup
+export PATH="/Users/mikoscz/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+export PATH=/Users/mikoscz/.pyenv/shims/python:$PATH
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/mikoscz/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/mikoscz/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/mikoscz/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/mikoscz/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+export PATH="/usr/local/opt/mongodb@3.6/bin:$PATH"

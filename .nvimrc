@@ -104,13 +104,13 @@ Plug 'scrooloose/syntastic'
 
 "Fuzzy search:
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
+" Plug 'JazzCore/ctrlp-cmatcher'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'awetzel/elixir.nvim'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'fishbullet/deoplete-ruby'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'fishbullet/deoplete-ruby'
 
 "Comments:
 Plug 'tpope/vim-commentary'
@@ -121,13 +121,15 @@ Plug 'godlygeek/tabular'
 "Ruby
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
-"Plug 'tpope/vim-rails'
-
+Plug 'tpope/vim-rails'
+Plug 'thoughtbot/vim-rspec'
 "Yaml
 Plug 'lmeijvogel/vim-yaml-helper'
 
 "JS
 Plug 'othree/yajs.vim'
+"Plug 'pangloss/vim-javascript'
+"Plug 'leshill/vim-json'
 
 "HTML
 Plug 'mattn/emmet-vim'
@@ -149,11 +151,33 @@ Plug 'vimwiki/vimwiki'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'jiangmiao/auto-pairs'
+Plug 'AndrewRadev/ember_tools.vim'
+Plug 'sukima/vim-ember-imports'
 
 "Linting
 Plug 'sbdchd/neoformat'
 
+"TypeScript
+"Plug 'mhartington/nvim-typescript'
+"Plug 'HerringtonDarkholme/yats.vim'
+
+"Snipets
+"Plug 'SirVer/ultisnips'
+
 " Plug 'terryma/vim-multiple-cursors'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" Bookmarks
+" Plug 'MattesGroeger/vim-bookmarks'
+"
+" Experimental
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
+
 call plug#end()
 
 let g:mustache_abbreviations = 1
@@ -209,7 +233,7 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -246,7 +270,7 @@ nmap \ :NERDTreeToggle<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 "Gitgutter
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 set nocursorcolumn
 set nocursorline
@@ -308,3 +332,37 @@ let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--single-quote']
             \ }
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_runner = "os_x_iterm2"
+
+" Python provider setup with pyenv
+let g:python_host_prog = '/Users/mikoscz/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/mikoscz/.pyenv/versions/neovim3/bin/python'
+
+let g:vim_ember_imports_map = '<Leader>e'
+
+xnoremap p pgvy
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_camel_case = 1
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#max_abbr_width = 0
+let g:deoplete#max_menu_width = 0
+
+let g:deoplete#sources#ternjs#tern_bin = '/Users/mikoscz/.nvm/versions/node/v8.6.0/bin/ternjs'
+let g:deoplete#sources#ternjs#timeout = 1
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#case_insensitive = 1
+let g:deoplete#sources#ternjs#filetypes = [
+      \ 'jsx',
+      \ 'javascript.jsx',
+      \ 'hbs',
+      \ ]
