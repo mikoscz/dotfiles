@@ -1,4 +1,6 @@
 set title
+set background=dark
+" set t_Co=256
 
 syntax on
 colorscheme onedark
@@ -101,6 +103,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 "Syntax:
 Plug 'scrooloose/syntastic'
+" Plug 'lifepillar/pgsql.vim'
 
 "Fuzzy search:
 Plug 'ctrlpvim/ctrlp.vim'
@@ -108,7 +111,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
-Plug 'awetzel/elixir.nvim'
+" Plug 'awetzel/elixir.nvim'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'fishbullet/deoplete-ruby'
 
@@ -119,15 +122,15 @@ Plug 'terryma/vim-expand-region'
 Plug 'godlygeek/tabular'
 
 "Ruby
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rails'
-Plug 'thoughtbot/vim-rspec'
+"Plug 'tpope/vim-endwise'
+"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-rails'
+"Plug 'thoughtbot/vim-rspec'
 "Yaml
 Plug 'lmeijvogel/vim-yaml-helper'
 
 "JS
-Plug 'othree/yajs.vim'
+"Plug 'othree/yajs.vim'
 "Plug 'pangloss/vim-javascript'
 "Plug 'leshill/vim-json'
 
@@ -143,7 +146,7 @@ Plug 'benekastah/neomake'
 Plug 'shime/vim-livedown'
 
 "Elixir
-" Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'vimwiki/vimwiki'
 
@@ -161,8 +164,8 @@ Plug 'sbdchd/neoformat'
 "Plug 'mhartington/nvim-typescript'
 "Plug 'HerringtonDarkholme/yats.vim'
 
-"Snipets
-"Plug 'SirVer/ultisnips'
+" Snipets
+" Plug 'SirVer/ultisnips'
 
 " Plug 'terryma/vim-multiple-cursors'
 
@@ -173,10 +176,10 @@ Plug 'rust-lang/rust.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
 "
 " Experimental
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"   \ 'branch': 'next',
+"   \ 'do': 'bash install.sh',
+"   \ }
 
 call plug#end()
 
@@ -266,6 +269,7 @@ command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap <leader>2 <C-n> :NERDTreeToggle<CR>
 nmap \| :NERDTreeFind<CR>
 nmap \ :NERDTreeToggle<CR>
+let g:NERDTreeHijackNetrw=0
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
@@ -298,7 +302,7 @@ autocmd! BufWritePost * Neomake
 
 "use ESLint
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+let g:syntastic_javascript_eslint_exe = '$(pwd)/node_modules/eslint/bin/eslint.js'
 
 " neomake
 nmap <Leader><Space>o :lopen<CR>      " open location window
@@ -342,7 +346,7 @@ let g:rspec_runner = "os_x_iterm2"
 
 " Python provider setup with pyenv
 let g:python_host_prog = '/Users/mikoscz/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/mikoscz/.pyenv/versions/neovim3/bin/python'
+let g:python3_host_prog = '/Users/mikoscz/.pyenv/versions/neovim3.6/bin/python'
 
 let g:vim_ember_imports_map = '<Leader>e'
 
@@ -366,3 +370,9 @@ let g:deoplete#sources#ternjs#filetypes = [
       \ 'javascript.jsx',
       \ 'hbs',
       \ ]
+
+" let g:sql_type_default = 'sql'
+
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

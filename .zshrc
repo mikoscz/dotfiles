@@ -124,3 +124,15 @@ export PATH=/Users/mikoscz/.pyenv/shims/python:$PATH
 [[ -f /Users/mikoscz/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/mikoscz/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 export PATH="/usr/local/opt/mongodb@3.6/bin:$PATH"
+
+# KAFKA
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+# DOCKER
+alias dc='docker-compose'
+
+export EDITOR=nvim
+
+. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
