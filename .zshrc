@@ -41,7 +41,7 @@ alias foreman='nocorrect foreman'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew cp encode64 extract gem git git-extras git-hubflow git-remote-branch github heroku node npm osx rails rake ruby rvm ssh-agent zsh-syntax-highlighting z zsh-autosuggestions fzf-zsh)
+plugins=(brew extract git git-extras git-hubflow git-remote-branch github heroku node npm osx ssh-agent zsh-syntax-highlighting z zsh-autosuggestions fzf-zsh kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,7 +60,7 @@ export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
 export NVM_DIR="/Users/mikoscz/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+alias load_nvm="[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh""  # This loads nvm
 
 # Rails aliases
 alias rdd='rake db:drop'

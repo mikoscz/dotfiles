@@ -5,6 +5,9 @@ set background=dark
 syntax on
 colorscheme onedark
 
+set encoding=utf-8
+set fileencoding=utf-8
+
 "Scroll horizontally by 1 character instead of default half screen
 set sidescroll=1
 "Always show at least 1 line above/below the cursor while scrolling
@@ -167,10 +170,11 @@ Plug 'sbdchd/neoformat'
 " Snipets
 " Plug 'SirVer/ultisnips'
 
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Rust
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 
 " Bookmarks
 " Plug 'MattesGroeger/vim-bookmarks'
@@ -371,8 +375,5 @@ let g:deoplete#sources#ternjs#filetypes = [
       \ 'hbs',
       \ ]
 
-" let g:sql_type_default = 'sql'
-
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
