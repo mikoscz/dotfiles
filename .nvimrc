@@ -1,12 +1,115 @@
+"Map leader to comma
+let mapleader = ","
+
+call plug#begin()
+" Theme & UI
+Plug 'mhartington/oceanic-next'
+
+Plug 'scrooloose/nerdtree'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'easymotion/vim-easymotion'
+
+Plug 'tpope/vim-surround'
+Plug 'sheerun/vim-polyglot'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Syntax:
+Plug 'scrooloose/syntastic'
+
+"Fuzzy search:
+" Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+
+"Comments:
+Plug 'tpope/vim-commentary'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'terryma/vim-expand-region'
+Plug 'godlygeek/tabular'
+
+Plug 'lmeijvogel/vim-yaml-helper'
+
+"HTML
+Plug 'mattn/emmet-vim'
+
+"Neovim only
+Plug 'janko-m/vim-test'
+Plug 'kassio/neoterm'
+
+"Markdown
+Plug 'shime/vim-livedown'
+
+"Elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'vimwiki/vimwiki'
+
+"Ember
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'jiangmiao/auto-pairs'
+Plug 'AndrewRadev/ember_tools.vim'
+Plug 'sukima/vim-javascript-imports'
+Plug 'sukima/vim-ember-imports'
+
+"Linting
+Plug 'sbdchd/neoformat'
+
+Plug 'terryma/vim-multiple-cursors'
+Plug 'nathanaelkane/vim-indent-guides'
+
+Plug 'andymass/vim-matchup'
+
+"fzf
+Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'bartoszmaka/fzf-mru.vim'
+call plug#end()
+
 set title
 set background=dark
-" set t_Co=256
 
 syntax on
-colorscheme onedark
+colorscheme oceanicnext
 
 set encoding=utf-8
 set fileencoding=utf-8
+
+" Coc
+nmap <C-a> :CocCommand<CR>
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Use <C-l> for trigger snippet expand.
+imap <C-s> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
 
 "Scroll horizontally by 1 character instead of default half screen
 set sidescroll=1
@@ -89,107 +192,10 @@ set backspace=indent,eol,start
 " Show commands as they are entered
 set showcmd
 
-call plug#begin()
-Plug 'scrooloose/nerdtree'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-Plug 'easymotion/vim-easymotion'
-
-Plug 'tpope/vim-surround'
-Plug 'sheerun/vim-polyglot'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-"Syntax:
-Plug 'scrooloose/syntastic'
-" Plug 'lifepillar/pgsql.vim'
-
-"Fuzzy search:
-Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'JazzCore/ctrlp-cmatcher'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neoinclude.vim'
-" Plug 'awetzel/elixir.nvim'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-" Plug 'fishbullet/deoplete-ruby'
-
-"Comments:
-Plug 'tpope/vim-commentary'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'terryma/vim-expand-region'
-Plug 'godlygeek/tabular'
-
-"Ruby
-"Plug 'tpope/vim-endwise'
-"Plug 'tpope/vim-repeat'
-"Plug 'tpope/vim-rails'
-"Plug 'thoughtbot/vim-rspec'
-"Yaml
-Plug 'lmeijvogel/vim-yaml-helper'
-
-"JS
-"Plug 'othree/yajs.vim'
-"Plug 'pangloss/vim-javascript'
-"Plug 'leshill/vim-json'
-
-"HTML
-Plug 'mattn/emmet-vim'
-
-"Neovim only
-Plug 'janko-m/vim-test'
-Plug 'kassio/neoterm'
-Plug 'benekastah/neomake'
-
-"Markdown
-Plug 'shime/vim-livedown'
-
-"Elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
-Plug 'vimwiki/vimwiki'
-
-"Ember
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'jiangmiao/auto-pairs'
-Plug 'AndrewRadev/ember_tools.vim'
-Plug 'sukima/vim-ember-imports'
-
-"Linting
-Plug 'sbdchd/neoformat'
-
-"TypeScript
-"Plug 'mhartington/nvim-typescript'
-"Plug 'HerringtonDarkholme/yats.vim'
-
-" Snipets
-" Plug 'SirVer/ultisnips'
-
-Plug 'terryma/vim-multiple-cursors'
-Plug 'nathanaelkane/vim-indent-guides'
-
-" Rust
-" Plug 'rust-lang/rust.vim'
-
-" Bookmarks
-" Plug 'MattesGroeger/vim-bookmarks'
-"
-" Experimental
-" Plug 'autozimu/LanguageClient-neovim', {
-"   \ 'branch': 'next',
-"   \ 'do': 'bash install.sh',
-"   \ }
-
-call plug#end()
-
 let g:mustache_abbreviations = 1
 let g:multi_cursor_exit_from_visual_mode = 0
 
+" Colors for colorscheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if (has("termguicolors"))
  set termguicolors
@@ -197,14 +203,11 @@ endif
 
 set omnifunc=syntaxcomplete#Complete
 
-"Map leader to comma
-let mapleader = ","
-
 "Use commands like this: ;w instead of :w
 nnoremap ; :
 
 "Easymotion
-map <Leader> <Plug>(easymotion-prefix)
+" map <Leader> <Plug>(easymotion-prefix)
 " Require tpope/vim-repeat to enable dot repeat support
 " Jump to anywhere with only `s{char}{target}`
 " `s<CR>` repeat last find motion.
@@ -302,18 +305,18 @@ let test#strategy = 'neoterm'
 :nnoremap <A-l> <C-w>l
 
 "Neomake on save
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
 "use ESLint
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:syntastic_javascript_eslint_exe = '$(pwd)/node_modules/eslint/bin/eslint.js'
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:syntastic_javascript_eslint_exe = '$(pwd)/node_modules/eslint/bin/eslint.js'
 
 " neomake
-nmap <Leader><Space>o :lopen<CR>      " open location window
-nmap <Leader><Space>c :lclose<CR>     " close location window
-nmap <Leader><Space>, :ll<CR>         " go to current error/warning
-nmap <Leader><Space>n :lnext<CR>      " next error/warning
-nmap <Leader><Space>p :lprev<CR>      " previous error/warning
+" nmap <Leader><Space>o :lopen<CR>      " open location window
+" nmap <Leader><Space>c :lclose<CR>     " close location window
+" nmap <Leader><Space>, :ll<CR>         " go to current error/warning
+" nmap <Leader><Space>n :lnext<CR>      " next error/warning
+" nmap <Leader><Space>p :lprev<CR>      " previous error/warning
 
 "Auto remove trailing whitespaces on save
 autocmd BufWritePre * FixWhitespace
@@ -341,10 +344,10 @@ let g:neoformat_javascript_prettier = {
             \ 'args': ['--single-quote']
             \ }
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_runner = "os_x_iterm2"
 
@@ -377,3 +380,92 @@ let g:deoplete#sources#ternjs#filetypes = [
 
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+let g:coc_node_path='/Users/mikoscz/.nvm/versions/node/v10.6.0/bin/node'
+
+:imap kj <Esc>
+
+autocmd VimEnter * NERDTree
+
+let g:coc_filetype_map = {
+      \ 'sass': 'css',
+      \ }
+
+" matchup
+let g:matchup_matchparen_status_offscreen   = 1
+let g:matchup_matchparen_deferred           = 1
+let g:matchup_matchparen_hi_surround_always = 1
+let g:matchup_transmute_enabled             = 0
+
+" NerdTree
+let g:NERDTreeDirArrowExpandable        = '📁'
+let g:NERDTreeDirArrowCollapsible       = '📂'
+highlight! NERDTreeOpenable ctermfg=132 guifg=#D19A66
+highlight! def link NERDTreeClosable NERDTreeOpenable
+
+" Fzf
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_command_prefix = 'Fzf'
+" let g:fzf_layout = { 'down': '~25%' }
+let g:fzf_mru_relative = 1
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Typedef'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Identifier'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'pointer': ['fg', 'Identifier'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment']
+      \ }
+
+command! -bang -nargs=? -complete=dir FZFFilesPreview
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" fix fzf being open in terminal/insert mode randomly after 0.4 update by adding 'a<Bs>'
+nnoremap <C-l> :FZFFreshMruPreview<CR>a<Bs>
+nnoremap <C-p> :FZFFilesPreview<CR>a<Bs>
+" nnoremap <C-p><C-g> :FzfGitFiles?<CR>a<Bs>
+" nnoremap <C-p><C-h> :FzfHistory<CR>a<Bs>
+" nnoremap <C-p><C-b> :FzfBuffers<CR>a<Bs>
+" nnoremap <C-p><C-f> :FzfRg<CR>a<Bs>
+" nnoremap <C-p><C-l> :FzfLines<CR>a<Bs>
+" nnoremap <C-p><C-v> :FzfCommits<CR>a<Bs>
+" nnoremap <C-p><C-m> :FzfMarks<CR>a<Bs>
+let g:fzf_action = {
+      \ 'ctrl-q': function('s:build_quickfix_list'),
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit'}
+
+set wildignore+=
+      \*/tmp/*,
+      \*/node_modules/*,
+      \*/.git/*,
+      \*.so,
+      \*.swp,
+      \*.zipo
+
+tnoremap <esc> <C-c>
+
+" sometimes I just hold shift for too long
+cabbrev W   w
+cabbrev Wa  wa
+cabbrev Wq  wq
+cabbrev WQ  wq
+cabbrev Wqa wqa
+cabbrev WQa wqa
+cabbrev Q   q
+cabbrev Qa  qa
+cabbrev Q!  q
+cabbrev Qa! qa
