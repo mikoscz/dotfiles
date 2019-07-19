@@ -432,16 +432,40 @@ let g:fzf_colors = {
 command! -bang -nargs=? -complete=dir FZFFilesPreview
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+" fzf
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, 'number', 'no')
+
+  let height = float2nr(&lines/2)
+  let width = float2nr(&columns * 0.8)
+  let row = float2nr(&lines / 5)
+  let col = float2nr((&columns - width) / 3)
+
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': row,
+        \ 'col': col,
+        \ 'width': width,
+        \ 'height':height,
+        \ }
+  let win =  nvim_open_win(buf, v:true, opts)
+  call setwinvar(win, '&number', 0)
+  call setwinvar(win, '&relativenumber', 0)
+endfunction
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 " fix fzf being open in terminal/insert mode randomly after 0.4 update by adding 'a<Bs>'
-nnoremap <C-l> :FZFFreshMruPreview<CR>a<Bs>
-nnoremap <C-p> :FZFFilesPreview<CR>a<Bs>
-" nnoremap <C-p><C-g> :FzfGitFiles?<CR>a<Bs>
-" nnoremap <C-p><C-h> :FzfHistory<CR>a<Bs>
-" nnoremap <C-p><C-b> :FzfBuffers<CR>a<Bs>
-" nnoremap <C-p><C-f> :FzfRg<CR>a<Bs>
-" nnoremap <C-p><C-l> :FzfLines<CR>a<Bs>
-" nnoremap <C-p><C-v> :FzfCommits<CR>a<Bs>
-" nnoremap <C-p><C-m> :FzfMarks<CR>a<Bs>
+nnoremap <C-p><C-r> :FZFFreshMruPreview<CR>a<Bs>
+nnoremap <C-p><C-p> :FZFFilesPreview<CR>a<Bs>
+nnoremap <C-p><C-g> :FzfGitFiles?<CR>a<Bs>
+nnoremap <C-p><C-h> :FzfHistory<CR>a<Bs>
+nnoremap <C-p><C-b> :FzfBuffers<CR>a<Bs>
+nnoremap <C-p><C-f> :FzfAg<CR>a<Bs>
+nnoremap <C-p><C-l> :FzfLines<CR>a<Bs>
+nnoremap <C-p><C-v> :FzfCommits<CR>a<Bs>
+nnoremap <C-p><C-m> :FzfMarks<CR>a<Bs>
+
 let g:fzf_action = {
       \ 'ctrl-q': function('s:build_quickfix_list'),
       \ 'ctrl-t': 'tab split',

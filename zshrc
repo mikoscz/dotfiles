@@ -60,53 +60,8 @@ export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
 export NVM_DIR="/Users/mikoscz/.nvm"
-alias load_nvm="[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh""  # This loads nvm
-
-# Rails aliases
-alias rdd='rake db:drop'
-alias rdc='rake db:create'
-alias rdm='rake db:migrate'
-alias rddcm='rake db:drop db:create db:migrate'
-alias rddcms='rake db:drop db:create db:migrate db:seed'
-alias rc='rails c'
-alias rs='rails s'
-alias rsd='rails s -d'
-alias rk='kill `cat tmp/pids/server.pid`'
-alias rl='tail -f log/development.log'
-alias gdf='g diff'
-alias rbc='rubocop -a'
-alias gs='git status -s'
-alias gdc='git diff --cached'
-alias aliasall='{ alias; git aliases;  } | sort'
-alias gccm='gco milestones-v3.7'
-alias yodapush='ggpush -f'
-alias krysia="git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'"
-alias papiesz="cat ~/tmp/jp2.txt"
-alias blyat="cat ~/tmp/blyat.txt"
-alias gclean="git clean -f"
-alias v="nvim ."
-alias c="code ."
-alias t="tig"
-
-# Elixir aliases
-
-alias iexm="iex -S mix"
-alias iexp="iex -S mix phx.server"
-
-# Docker aliases
-alias dkall="docker kill $(docker ps -q)"
 
 export ERL="-kernel shell_history_path \"$HOME/.elixir-history\" $ERL"
-
-# added by travis gem
-
-alias pietpass="rails r 'puts User.find_by_email(\"piet.neirinck@vtelligence.com\").update(password: \"secret\")'"
-[ -f /Users/mikoscz/.travis/travis.sh ] && source /Users/mikoscz/.travis/travis.sh
-export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
-
-# Add iex history
-export ERL_AFLAGS="-kernel shell_history enabled"
-alias iex='iex --erl "-kernel shell_history enabled"'
 
 # Pyenv setup
 export PATH="/Users/mikoscz/.pyenv/bin:$PATH"
@@ -129,9 +84,6 @@ export PATH="/usr/local/opt/mongodb@3.6/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
-# DOCKER
-alias dc='docker-compose'
-
 export EDITOR=nvim
 
 . /usr/local/opt/asdf/asdf.sh
@@ -141,3 +93,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+
+source ~/.aliases.zsh
