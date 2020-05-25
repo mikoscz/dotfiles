@@ -41,7 +41,7 @@ alias foreman='nocorrect foreman'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew extract git git-extras git-hubflow git-remote-branch github heroku node npm osx ssh-agent zsh-syntax-highlighting z zsh-autosuggestions fzf-zsh kubectl)
+plugins=(brew extract git git-extras git-hubflow git-remote-branch osx ssh-agent zsh-syntax-highlighting z zsh-autosuggestions fzf-zsh)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,24 +49,24 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:/Users/mikoscz/.rvm/gems/ruby-2.3.3@ntbackend/bin
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# export PATH=$PATH:/Users/mikoscz/.rvm/gems/ruby-2.3.3@ntbackend/bin
 
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_GC_HEAP_INIT_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
+# export RUBY_HEAP_MIN_SLOTS=1000000
+# export RUBY_GC_HEAP_INIT_SLOTS=1000000
+# export RUBY_HEAP_SLOTS_INCREMENT=1000000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=1000000000
+# export RUBY_HEAP_FREE_MIN=500000
 
 export NVM_DIR="/Users/mikoscz/.nvm"
 
 export ERL="-kernel shell_history_path \"$HOME/.elixir-history\" $ERL"
 
 # Pyenv setup
-export PATH="/Users/mikoscz/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH="/Users/mikoscz/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 
 export PATH=/Users/mikoscz/.pyenv/shims/python:$PATH
@@ -92,6 +92,9 @@ export EDITOR=nvim
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -g "" --ignore-dir .git'
 
 source ~/.aliases.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /Users/mikoscz/.asdf/installs/vault/1.2.0/bin/vault vault

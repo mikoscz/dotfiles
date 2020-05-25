@@ -25,7 +25,7 @@ Plug 'scrooloose/syntastic'
 "Fuzzy search:
 " Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Comments:
 Plug 'tpope/vim-commentary'
@@ -70,6 +70,9 @@ Plug 'andymass/vim-matchup'
 Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'bartoszmaka/fzf-mru.vim'
+
+" WakaTime
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 set title
@@ -82,7 +85,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " Coc
-nmap <C-a> :CocCommand<CR>
+nmap <leader><C-a> :CocCommand<CR>
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -97,6 +100,10 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" Remap CocAction
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Use <C-l> for trigger snippet expand.
 imap <C-s> <Plug>(coc-snippets-expand)
@@ -126,7 +133,7 @@ nnoremap <CR> :noh<CR><CR>
 nmap <C-k> ddkP
 nmap <C-j> ddp
 
-nmap <S-f> :Neoformat<CR>
+" nmap <S-f> :Neoformat<CR>
 vmap <S-t> :Tabularize /
 
 "Mouse support
@@ -386,7 +393,7 @@ let g:coc_node_path='/Users/mikoscz/.nvm/versions/node/v10.6.0/bin/node'
 
 :imap kj <Esc>
 
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 
 let g:coc_filetype_map = {
       \ 'sass': 'css',
@@ -493,3 +500,13 @@ cabbrev Q   q
 cabbrev Qa  qa
 cabbrev Q!  q
 cabbrev Qa! qa
+
+" ESC on jk in insert mode
+:imap jk <Esc>
+
+" coc-yank
+nnoremap <silent> <space>p  :<C-u>CocList -A --normal yank<cr>
+hi HighlightedyankRegion term=bold ctermbg=0 guibg=#24d4ae
+
+" Copy curreny file path
+:nnoremap <Leader>cp :let @+=expand('%:p')<CR>
