@@ -92,7 +92,9 @@ export EDITOR=nvim
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden -g "" --ignore-dir .git'
+# export FZF_DEFAULT_COMMAND='ag --hidden -g "" --ignore-dir .git --ignore node_modules -g ""'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' -g '!node_modules'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 source ~/.aliases.zsh
 

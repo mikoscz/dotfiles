@@ -2,6 +2,13 @@
 let mapleader = ","
 
 call plug#begin()
+" Golang
+Plug 'sebdah/vim-delve'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Graphql
+Plug 'jparise/vim-graphql'
+
 " Theme & UI
 Plug 'mhartington/oceanic-next'
 
@@ -73,6 +80,8 @@ Plug 'bartoszmaka/fzf-mru.vim'
 
 " WakaTime
 Plug 'wakatime/vim-wakatime'
+
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 set title
@@ -389,7 +398,7 @@ let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:coc_node_path='/Users/mikoscz/.nvm/versions/node/v10.6.0/bin/node'
+let g:coc_node_path='/Users/mikoscz/.nvm/versions/node/v12.14.1/bin/node'
 
 :imap kj <Esc>
 
@@ -468,7 +477,7 @@ nnoremap <C-p><C-p> :FZFFilesPreview<CR>a<Bs>
 nnoremap <C-p><C-g> :FzfGitFiles?<CR>a<Bs>
 nnoremap <C-p><C-h> :FzfHistory<CR>a<Bs>
 nnoremap <C-p><C-b> :FzfBuffers<CR>a<Bs>
-nnoremap <C-p><C-f> :FzfAg<CR>a<Bs>
+nnoremap <C-p><C-f> :FzfRg<CR>a<Bs>
 nnoremap <C-p><C-l> :FzfLines<CR>a<Bs>
 nnoremap <C-p><C-v> :FzfCommits<CR>a<Bs>
 nnoremap <C-p><C-m> :FzfMarks<CR>a<Bs>
@@ -510,3 +519,18 @@ hi HighlightedyankRegion term=bold ctermbg=0 guibg=#24d4ae
 
 " Copy curreny file path
 :nnoremap <Leader>cp :let @+=expand('%:p')<CR>
+
+:nnoremap <C-l><C-i> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+:nnoremap <C-l><C-l> :Prettier<CR>
+:nnoremap <C-l><C-k> :! go fmt %:p<CR>q
+:nnoremap <Leader>s :GoInfo<CR>
+
+autocmd Filetype go nnoremap <C-l><C-l> :GoFmt<CR>
+
+" GO
+set tabstop=4
+
+let g:startify_bookmarks = [
+            \ { 'z': '~/.zshrc' },
+            \ { 'v': '~/Dotfiles/.nvimrc' },
+            \ ]
