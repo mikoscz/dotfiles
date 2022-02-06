@@ -1,0 +1,93 @@
+https://sourabhbajaj.com/mac-setup/SystemPreferences/
+
+
+
+
+System:
+1) Apple menu () > About This Mac > Software Update.
+
+Trackpad:
+2) System preference tap to click
+
+Keyboard:
+- Map CapsLock to control Preferences -> keyboard
+
+Dock:
+1) Check "Automatically hide and show the Dock
+2) 2) Remove workspace auto-switching by running the following command
+defaults write com.apple.dock workspaces-auto-swoosh -bool NO
+
+Finder:
+General:
+- Change New finder window show to open in your Home Directory
+Sidebar:
+- Add Home directory
+
+Menubar:
+Change battery to Show percentage symbols
+
+Spotlight:
+Uncheck fonts, images, files etc.
+
+Accounts:
+- add google accounrs
+
+Defaults:
+Enable repeating keys by pressing and holding down keys: defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false (and restart any app that you need to repeat keys in)
+
+screenshots
+mkdir -p ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots/ && killall SystemUIServer
+
+
+
+XCode:
+xcode-select --install
+
+
+Install homebrew:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Keys:
+- setup .ssh keys
+- mkdir ~/.ssh
+- copy keys
+- https://sourabhbajaj.com/mac-setup/Git/ Add your SSH key to the ssh-agent step - TBU
+
+
+Git:
+git config --global user.name "Michał Staśkiewicz"
+git config --global user.email "staskiewicz.miko@gmail.com"
+git config --global core.editor "nvim"
+
+asdf plugins:
+asdf plugin add neovim
+brew install cmake
+brew install pkg-config
+asdf install neovim ref:master
+asdf global neovim ref:master
+
+
+
+brew install --cask raycast
+brew install --cask raycast
+brew install --cask kitty
+brew install --cask docker
+brew install --cask notion
+brew install --cask 1password
+brew install --cask slack
+brew install asdf
+brew install git
+
+Installing Volta Node Manager:
+curl https://get.volta.sh | bash
+volta install node // installs current lts
+
+3) 1password setup
+https://1password.com/downloads/mac/
+
+
+
+
+
+
