@@ -21,6 +21,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+setopt auto_cd
+
 # plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::fzf
