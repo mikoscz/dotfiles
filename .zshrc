@@ -23,11 +23,14 @@ zinit light-mode for \
 
 # plugins
 zinit snippet OMZP::git
+zinit snippet OMZP::fzf
 
 zinit load zdharma-continuum/fast-syntax-highlighting
 zinit load zsh-users/zsh-autosuggestions
 zinit load agkozak/zsh-z
-zinit load zdharma-continuum/history-search-multi-word
+
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!.git/' -g '!node_modules/' -g '!tmp/' -g '!vendor/' -g '!doc/'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
