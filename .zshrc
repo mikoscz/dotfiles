@@ -39,3 +39,4 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+eval "$(starship init zsh)"

@@ -80,6 +80,7 @@ brew install asdf
 brew install git
 brew install ripgrep
 brew install fzf
+brew install starship
 
 Installing Volta Node Manager:
 curl https://get.volta.sh | bash
