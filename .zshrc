@@ -21,6 +21,14 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+# plugins
+zinit snippet OMZP::git
+
+zinit load zdharma-continuum/fast-syntax-highlighting
+zinit load zsh-users/zsh-autosuggestions
+zinit load agkozak/zsh-z
+zinit load zdharma-continuum/history-search-multi-word
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 

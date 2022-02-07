@@ -78,6 +78,8 @@ brew install --cask 1password
 brew install --cask slack
 brew install asdf
 brew install git
+brew install ripgrep
+brew install fzf
 
 Installing Volta Node Manager:
 curl https://get.volta.sh | bash
