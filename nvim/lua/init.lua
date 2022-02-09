@@ -23,3 +23,7 @@ vim.b.shiftwidth = 2
 
 -- TODO: Add description
 vim.b.expandtab = true
+
+
+-- TODO: Add description
+vim.g.mapleader = ' '

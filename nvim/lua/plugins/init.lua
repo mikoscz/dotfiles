@@ -13,10 +13,18 @@ use { -- TODO: Add description
 	config = [[ require('plugins/nvim-lsp-installer')]]
 }
 
-use {
+use { -- TODO: Add description / nerd tree alternative
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = function() require'nvim-tree'.setup {} end
+    config = [[ require('plugins/nvim-tree') ]]
+}
+
+use {
+	'nvim-telescope/telescope.nvim',
+	requires = {
+		'nvim-lua/plenary.nvim',
+	},
+	config = [[ require('plugins/telescope') ]]
 }
