@@ -24,7 +24,8 @@ use { -- TODO: Add description / nerd tree alternative
 use {
 	'nvim-telescope/telescope.nvim',
 	requires = {
-		'nvim-lua/plenary.nvim',
+		{'nvim-lua/plenary.nvim'},
+		{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}, -- FZF sorter for telescope written in c
 	},
 	config = [[ require('plugins/telescope') ]]
 }
