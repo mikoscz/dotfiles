@@ -29,3 +29,9 @@ use {
 	},
 	config = [[ require('plugins/telescope') ]]
 }
+
+use { -- Nvim Treesitter configurations and abstraction layer
+	'nvim-treesitter/nvim-treesitter',
+	run = ':TSUpdate',
+	config = [[ require('plugins/nvim-treesitter') ]]
+}
