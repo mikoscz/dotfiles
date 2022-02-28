@@ -2,6 +2,9 @@ require('disable_builtin')
 require('setup_packer')
 require('plugins')
 
+-- TODO: Add description
+vim.cmd('colorscheme nord')
+
 --Make line numbers default
 vim.wo.number = true
 
