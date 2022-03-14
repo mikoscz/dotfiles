@@ -2,6 +2,8 @@ require('disable_builtin')
 require('setup_packer')
 require('plugins')
 
+local nnoremap = require('utils').nnoremap
+
 -- TODO: Add description
 vim.cmd('colorscheme nord')
 
@@ -16,17 +18,24 @@ vim.o.mouse = 'a'
 vim.o.clipboard = "unnamedplus"
 
 -- TODO: Add description
-vim.b.tabstop = 2
+vim.opt.tabstop = 2
 
 -- TODO: Add description
-vim.b.softtabstop = 2
+vim.opt.softtabstop = 2
 
 -- TODO: Add description
-vim.b.shiftwidth = 2
+vim.opt.shiftwidth = 2
 
 -- TODO: Add description
-vim.b.expandtab = true
+vim.opt.expandtab = true
 
 
 -- TODO: Add description
 vim.g.mapleader = ' '
+
+-- Better windows navigation
+
+nnoremap('<A-h>', '<C-w>h')
+nnoremap('<A-j>', '<C-w>j')
+nnoremap('<A-k>', '<C-w>k')
+nnoremap('<A-l>', '<C-w>l')
