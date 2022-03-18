@@ -50,3 +50,11 @@ use { -- A completion plugin for neovim coded in Lua.
 	},
 	config = [[ require('plugins/nvim-cmp') ]]
 }
+
+use {
+  'akinsho/bufferline.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = [[ require('plugins/bufferline') ]]
+ }
