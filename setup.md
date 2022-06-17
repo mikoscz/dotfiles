@@ -1,6 +1,10 @@
 https://sourabhbajaj.com/mac-setup/SystemPreferences/
 
 
+install rosetta 
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+
+
 
 
 System:
@@ -70,17 +74,19 @@ asdf global neovim ref:master
 
 
 brew install --cask raycast
-brew install --cask raycast
 brew install --cask kitty
 brew install --cask docker
 brew install --cask notion
 brew install --cask 1password
 brew install --cask slack
+brew install --cask spotify
 brew install asdf
 brew install git
 brew install ripgrep
 brew install fzf
 brew install starship
+
+brew install --cask autodesk-fusion360
 
 Installing Volta Node Manager:
 curl https://get.volta.sh | bash

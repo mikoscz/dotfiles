@@ -34,8 +34,13 @@ vim.opt.expandtab = true
 vim.g.mapleader = ' '
 
 -- Better windows navigation
-
 nnoremap('<A-h>', '<C-w>h')
 nnoremap('<A-j>', '<C-w>j')
 nnoremap('<A-k>', '<C-w>k')
 nnoremap('<A-l>', '<C-w>l')
+nnoremap('<A-l>', '<C-w>l')
+
+-- Cancel highlights
+nnoremap('<ESC>', ':noh<CR>')
+
+

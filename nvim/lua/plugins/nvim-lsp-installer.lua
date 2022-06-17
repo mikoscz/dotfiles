@@ -54,6 +54,8 @@ end
 
 local servers = {
 	"sumneko_lua", -- for Lua
+  "emmet_ls", -- for HTML snippets
+  "tsserver", -- for JS
 	-- "rust_analyzer",      -- for Rust
 	-- "pyright",            -- for Python
 	-- "clangd",             -- for C/C++
