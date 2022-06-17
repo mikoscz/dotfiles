@@ -46,9 +46,11 @@ cmp.setup({
 		-- {name = 'calc'},
 	},
 
-	documentation = {
-		border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"},
-	},
+  window = {
+    documentation = {
+      border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"},
+    },
+  },
 
 	experimental = {
 		-- ghost_text = true,
