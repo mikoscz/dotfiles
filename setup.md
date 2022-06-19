@@ -99,4 +99,6 @@ https://1password.com/downloads/mac/
 
 
 
-
+# Troubleshooting
+1) ASDF cannot reshim after upgrade eg. brew updated asdf from 0.9.0 to 0.10.0 and after asdf reshim tools are not working
+```rm -rf ~/.asdf/shims && asdf reshim```

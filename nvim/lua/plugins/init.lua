@@ -15,6 +15,7 @@ use { -- TODO: Add description
   config = [[ require('plugins/nvim-lsp-installer')]]
 }
 
+
 use { -- TODO: Add description / nerd tree alternative
   'kyazdani42/nvim-tree.lua',
   requires = {
@@ -45,8 +46,8 @@ use { -- A completion plugin for neovim coded in Lua.
     { "hrsh7th/cmp-nvim-lua", ft = 'lua' }, -- nvim-cmp source for nvim lua
     "hrsh7th/cmp-buffer", -- nvim-cmp source for buffer words.
     "hrsh7th/cmp-path", -- nvim-cmp source for filesystem paths.
-    -- "hrsh7th/cmp-calc", -- nvim-cmp source for math calculation.
-    -- "saadparwaiz1/cmp_luasnip" -- luasnip completion source for nvim-cmp
+    "hrsh7th/cmp-calc", -- nvim-cmp source for math calculation.
+    "saadparwaiz1/cmp_luasnip" -- luasnip completion source for nvim-cmp
   },
   config = [[ require('plugins/nvim-cmp') ]]
 }
