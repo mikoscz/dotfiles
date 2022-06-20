@@ -19,14 +19,15 @@ keymap("n", '<leader><ESC>', ':noh<CR>', opts)
 -- navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-x>", ":bd<CR>", opts)
 
--- Press jk fast to enter
+-- press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
--- Move text up and down
--- keymap("n", "<C-j>", "<ESC>:m .+1<CR>==", opts)
--- keymap("n", "<C-k>", "<ESC>:m .-2<CR>==", opts)
--- keymap("v", "<C-j>", ":m .+1<CR>==", opts)
--- keymap("v", "<C-k>", ":m .-2<CR>==", opts)
--- keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+-- move text up and down
+keymap("n", "<C-j>", "<ESC>:m .+1<CR>==", opts)
+keymap("n", "<C-k>", "<ESC>:m .-2<CR>==", opts)
+keymap("v", "<C-j>", ":m .+1<CR>==", opts)
+keymap("v", "<C-k>", ":m .-2<CR>==", opts)
+keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
