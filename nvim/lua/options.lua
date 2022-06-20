@@ -27,7 +27,7 @@ local options = {
   swapfile = false,                        -- creates a swapfile
   tabstop = 2,                             -- insert 2 spaces for a tab
   termguicolors = true,                    -- set term gui colors
-  timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 1000,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   wrap = false,                            -- display lines as one long line
@@ -38,5 +38,4 @@ for key, value in pairs(options) do
   vim.opt[key] = value
 end
 
-vim.cmd('colorscheme nord')
 vim.g.mapleader = ' '
