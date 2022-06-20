@@ -100,6 +100,13 @@ Setup keyboard repeat speed
 ```defaults write -g KeyRepeat -int 2```
 ```defaults write -g InitialKeyRepeat -int 15```
 
+Setup python
+
+asdf plugin add python
+asdf install python latest:3
+asdf install python latest:3
+asdf global python 3.10.5
+
 
 # Troubleshooting
 1) ASDF cannot reshim after upgrade eg. brew updated asdf from 0.9.0 to 0.10.0 and after asdf reshim tools are not working
