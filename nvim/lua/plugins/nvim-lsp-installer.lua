@@ -3,6 +3,7 @@ local servers = {
   "sumneko_lua", -- for Lua
   "emmet_ls", -- for HTML snippets
   "tsserver", -- for JS
+  "ember", -- for Ember
   -- "rust_analyzer",      -- for Rust
   -- "pyright",            -- for Python
   -- "clangd",             -- for C/C++
@@ -71,10 +72,16 @@ lspconfig.sumneko_lua.setup {
     },
   }
 }
+
 lspconfig.tsserver.setup {
   on_attach = on_attach,
 }
+
 lspconfig.emmet_ls.setup {
+  on_attach = on_attach,
+}
+
+lspconfig.ember.setup {
   on_attach = on_attach,
 }
 
