@@ -71,3 +71,8 @@ use {
   'numToStr/Comment.nvim',
   config = [[ require('plugins/Comment') ]]
 }
+
+use {
+  'simrat39/symbols-outline.nvim',
+  config = [[ require('plugins/symbols-outline') ]]
+}

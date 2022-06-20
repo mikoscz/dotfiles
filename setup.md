@@ -95,8 +95,10 @@ volta install node // installs current lts
 3) 1password setup
 https://1password.com/downloads/mac/
 
+Setup keyboard repeat speed
 
-
+```defaults write -g KeyRepeat -int 2```
+```defaults write -g InitialKeyRepeat -int 15```
 
 
 # Troubleshooting

@@ -1,18 +1,18 @@
 local actions = require('telescope.actions')
 local nnoremap = require('utils').nnoremap
 
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
     vimgrep_arguments = {
-	'rg',
-	'--color=never',
-	'--no-heading',
-	'--with-filename',
-	'--line-number',
-	'--column',
-	'--smart-case',
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
     },
 
     initial_mode = "insert",
@@ -23,15 +23,15 @@ require('telescope').setup{
     qflist_previewer = require "telescope.previewers".vim_buffer_qflist.new,
 
     color_devicons = true,
-    set_env = {["COLORTERM"] = "truecolor"},
+    set_env = { ["COLORTERM"] = "truecolor" },
     path_display = {},
 
     mappings = {
       i = {
-	['<esc>'] = actions.close,
-	['<C-j>'] = actions.move_selection_next,
-	['<C-k>'] = actions.move_selection_previous,
-	['<C-h>'] = 'which_key',
+        ['<esc>'] = actions.close,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous,
+        ['<C-h>'] = 'which_key',
       }
     }
   },
@@ -52,11 +52,11 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
     --
     fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
     }
   }
 }
