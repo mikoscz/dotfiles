@@ -66,3 +66,8 @@ use {
   },
   config = [[ require('plugins/bufferline') ]]
 }
+
+use {
+  'numToStr/Comment.nvim',
+  config = [[ require('plugins/Comment') ]]
+}
