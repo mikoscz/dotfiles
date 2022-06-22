@@ -5,7 +5,7 @@ local servers = {
   "tsserver", -- for JS
   "ember", -- for Ember
   -- "rust_analyzer",      -- for Rust
-  -- "pyright",            -- for Python
+  "pyright",            -- for Python
   -- "clangd",             -- for C/C++
   -- "bashls",             -- for Bash
 }
@@ -82,6 +82,10 @@ lspconfig.emmet_ls.setup {
 }
 
 lspconfig.ember.setup {
+  on_attach = on_attach,
+}
+
+lspconfig.pyright.setup {
   on_attach = on_attach,
 }
 
