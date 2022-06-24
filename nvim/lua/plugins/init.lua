@@ -55,8 +55,7 @@ use { -- A completion plugin for neovim coded in Lua.
 use {
   "L3MON4D3/LuaSnip",
   -- wants = "friendly-snippets",
-  after = "nvim-cmp",
-  config = [[ require('plugins/LuaSnip') ]]
+  -- after = "nvim-cmp"
 }
 
 use {
