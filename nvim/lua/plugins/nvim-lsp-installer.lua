@@ -5,7 +5,7 @@ local servers = {
   "tsserver", -- for JS
   "ember", -- for Ember
   -- "rust_analyzer",      -- for Rust
-  "pyright",            -- for Python
+  "pyright", -- for Python
   -- "clangd",             -- for C/C++
   -- "bashls",             -- for Bash
 }
@@ -79,6 +79,7 @@ lspconfig.tsserver.setup {
 
 lspconfig.emmet_ls.setup {
   on_attach = on_attach,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'handlebars' },
 }
 
 lspconfig.ember.setup {

@@ -42,7 +42,13 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'path' },
     { name = 'luasnip' },
-    { name = 'buffer', keyword_length = 1 },
+    {
+      name = 'buffer',
+      keyword_length = 1,
+      get_bufnrs = function()
+        return vim.api.nvim_list_bufs()
+      end
+    },
     -- {name = 'calc'},
   },
 
