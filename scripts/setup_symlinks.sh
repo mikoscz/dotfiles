@@ -5,3 +5,5 @@ ln -vsf ~/dotfiles/kitty/themes/nord.conf ~/.config/kitty/nord.conf
 
 mkdir -p ~/.config/nvim
 ln -vsf ~/dotfiles/nvim/**/* ~/.config/nvim
+
+ln -vsf ~/dotfiles/elixir/iex.exs ~/.iex.exs 

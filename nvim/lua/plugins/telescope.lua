@@ -72,4 +72,5 @@ nnoremap('<C-p><C-m>', [[<Cmd>lua require('telescope.builtin').marks()<CR>]])
 nnoremap('<C-p><C-b>', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]])
 nnoremap('<C-p><C-l>', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]])
 nnoremap('<C-p><C-h>', [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]])
+nnoremap('<C-p><C-d>', [[<Cmd>lua require('telescope.builtin').diagnostics()<CR>]])
 -- TODO: Configure LSP mappings

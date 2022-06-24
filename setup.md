@@ -107,7 +107,19 @@ asdf install python latest:3
 asdf install python latest:3
 asdf global python 3.10.5
 
+Setup Elixir
+brew install autoconf
+brew install openssl@1.1
+brew install wxwidgets
+export KERL_BUILD_DOCS="yes"
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf install erlang latest
+asdf global erlang latest
+
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.gi
+
 
 # Troubleshooting
 1) ASDF cannot reshim after upgrade eg. brew updated asdf from 0.9.0 to 0.10.0 and after asdf reshim tools are not working
 ```rm -rf ~/.asdf/shims && asdf reshim```
+

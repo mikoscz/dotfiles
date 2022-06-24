@@ -40,4 +40,11 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
 source ~/dotfiles/aliases.zsh
 
+# allow compilers to find libxslt 
+export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
+
+# enable shell history in iex
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 eval "$(starship init zsh)"
