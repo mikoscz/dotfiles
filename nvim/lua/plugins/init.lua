@@ -75,3 +75,8 @@ use {
   'simrat39/symbols-outline.nvim',
   config = [[ require('plugins/symbols-outline') ]]
 }
+
+use {
+  'lewis6991/gitsigns.nvim',
+  config = [[ require('plugins/gitsigns') ]]
+}
