@@ -6,3 +6,4 @@ function git_current_branch() {
 alias v="nvim"
 alias gdf="git diff"
 alias gap="git add -p ."
+alias gdc="git diff --staged"
