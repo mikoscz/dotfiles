@@ -47,4 +47,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
 # enable shell history in iex
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# add dir for user scoped binaries
+export PATH="$HOME/bin:$PATH"
+
 eval "$(starship init zsh)"

@@ -86,6 +86,10 @@ brew install ripgrep
 brew install fzf
 brew install starship
 
+brew install libpq
+ln -s $(brew --prefix libpq)/bin/psql ~/bin
+
+
 brew install --cask autodesk-fusion360
 
 Installing Volta Node Manager:
@@ -118,6 +122,14 @@ asdf global erlang latest
 
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.gi
 
+
+### Setup dir for local binaries
+mkdir ~/bin
+
+add to ~/.zshrc
+```
+export PATH="$HOME/bin:$PATH"
+```
 
 # Troubleshooting
 1) ASDF cannot reshim after upgrade eg. brew updated asdf from 0.9.0 to 0.10.0 and after asdf reshim tools are not working
