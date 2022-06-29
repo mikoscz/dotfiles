@@ -85,3 +85,11 @@ use {
   "Pocco81/TrueZen.nvim",
   config = [[ require('plugins/true_zen') ]]
 }
+
+use {
+  'phaazon/hop.nvim',
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}

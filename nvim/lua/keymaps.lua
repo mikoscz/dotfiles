@@ -35,3 +35,5 @@ keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 -- true zen plugin
 keymap("n", "<leader>s", ":TZFocus<CR>", opts)
 
+-- hop plugin
+keymap("", "f", "<cmd>lua require'hop'.hint_char1()<cr>", opts)
