@@ -80,3 +80,8 @@ use {
   'lewis6991/gitsigns.nvim',
   config = [[ require('plugins/gitsigns') ]]
 }
+
+use {
+  "Pocco81/TrueZen.nvim",
+  config = [[ require('plugins/true_zen') ]]
+}

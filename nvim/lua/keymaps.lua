@@ -31,3 +31,7 @@ keymap("v", "<C-j>", ":m .+1<CR>==", opts)
 keymap("v", "<C-k>", ":m .-2<CR>==", opts)
 keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- true zen plugin
+keymap("n", "<leader>s", ":TZFocus<CR>", opts)
+
