@@ -90,7 +90,8 @@ brew install libpq
 ln -s $(brew --prefix libpq)/bin/psql ~/bin
 
 
-brew install --cask autodesk-fusion360
+brew install --cask insomnia
+brew install --cask beekeeper-studio
 
 Installing Volta Node Manager:
 curl https://get.volta.sh | bash
