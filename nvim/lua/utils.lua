@@ -8,4 +8,16 @@ end
 
 function M.nnoremap(lhs, rhs, opts) return M.map('n', lhs, rhs, opts) end
 
+function M.useTabs()
+  vim.opt.expandtab = false
+  vim.opt.shiftwidth = 2
+  vim.opt.softtabstop = 0
+end
+
+function M.useSpaces()
+  vim.opt.expandtab = false
+  vim.opt.shiftwidth = 2
+  vim.opt.softtabstop = 0
+end
+
 return M

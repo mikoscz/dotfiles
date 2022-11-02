@@ -85,6 +85,7 @@ brew install git
 brew install ripgrep
 brew install fzf
 brew install starship
+brew install dog
 
 brew install libpq
 ln -s $(brew --prefix libpq)/bin/psql ~/bin
@@ -123,6 +124,38 @@ asdf global erlang latest
 
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.gi
 
+Setup Golang
+brew install coreutils
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+asdf install golang latest
+asdf global golang 1.18.3 
+
+Setup Rust
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf install rust latest
+asdf global rust latest
+
+
+setup redis for redis-cli
+brew install redis
+
+asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git
+
+asdf plugin-add terragrunt https://github.com/lotia/asdf-terragrunt
+asdf install terragrunt latest
+asdf global terragrunt latest
+
+asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git
+asdf install kubectl latest
+asdf global kubectl latest
+
+asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git
+asdf install helm latest
+asdf global helm latest
+
+asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud
+asdf install gcloud latest
+asdf global gcloud latest
 
 ### Setup dir for local binaries
 mkdir ~/bin
@@ -136,3 +169,5 @@ export PATH="$HOME/bin:$PATH"
 1) ASDF cannot reshim after upgrade eg. brew updated asdf from 0.9.0 to 0.10.0 and after asdf reshim tools are not working
 ```rm -rf ~/.asdf/shims && asdf reshim```
 
+
+brew install tree

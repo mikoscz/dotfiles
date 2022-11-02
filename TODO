@@ -2,20 +2,26 @@
 - [ ] https://github.com/windwp/nvim-autopairs
 - [ ] https://github.com/ahmedkhalf/project.nvim
 - [ ] https://github.com/lewis6991/impatient.nvim
-- [ ] https://github.com/phaazon/hop.nvim
 - [ ] https://github.com/folke/trouble.nvim
+- [x] https://github.com/phaazon/hop.nvim
 - [x] https://github.com/Pocco81/TrueZen.nvim
 - [x] https://github.com/lewis6991/gitsigns.nvim
+- [ ] https://github.com/akinsho/bufferline.nvim
+
+- [ ] Fix kitty theme loading
 
 
 - [ ] Configure delta for git diffs
 
 https://github.com/nvim-treesitter/nvim-treesitter/wiki/Colorschemes
 
+https://github.com/folke/tokyonight.nvim <-- this one
+
 https://github.com/shaunsingh/moonlight.nvim
 https://github.com/rose-pine/neovim
 https://github.com/sainnhe/everforest
 https://github.com/Matsuuu/pinkmare
 https://github.com/mhartington/oceanic-next
-https://github.com/folke/tokyonight.nvim
 https://github.com/edeneast/nightfox.nvim
+
+check font settings

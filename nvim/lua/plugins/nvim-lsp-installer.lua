@@ -3,11 +3,16 @@ local servers = {
   "sumneko_lua", -- for Lua
   "emmet_ls", -- for HTML snippets
   "tsserver", -- for JS
-  "ember", -- for Ember
-  -- "rust_analyzer",      -- for Rust
-  "pyright", -- for Python
+  -- "ember", -- for Ember
+  -- "gopls", -- for Ember
+  "rust_analyzer",      -- for Rust
+  -- "pyright", -- for Python
   -- "clangd",             -- for C/C++
   -- "bashls",             -- for Bash
+  -- "html",
+	"terraformls",
+	"cssls",
+	-- "cssmodules_ls",
 }
 
 require("nvim-lsp-installer").setup {
@@ -79,16 +84,45 @@ lspconfig.tsserver.setup {
 
 lspconfig.emmet_ls.setup {
   on_attach = on_attach,
-  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'handlebars' },
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'sass', 'scss', 'less', 'handlebars' },
 }
 
-lspconfig.ember.setup {
+-- lspconfig.ember.setup {
+--   on_attach = on_attach,
+-- }
+
+-- lspconfig.pyright.setup {
+--   on_attach = on_attach,
+-- }
+
+-- lspconfig.gopls.setup {
+--   on_attach = on_attach,
+-- }
+
+lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
 }
 
-lspconfig.pyright.setup {
+lspconfig.html.setup {
   on_attach = on_attach,
 }
+
+lspconfig.terraformls.setup {
+  on_attach = on_attach,
+  filetypes = { 'terraform' },
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.cssls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+-- lspconfig.cssmodules_ls.setup {
+-- 	on_attach = on_attach,
+-- }
 
 -- Provide settings first!
 --lsp_installer.settings {

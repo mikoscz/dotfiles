@@ -10,8 +10,8 @@ vim.g.maplocalleader = " "
 -- better windows navigation
 keymap("n", '<A-h>', '<C-w>h', opts)
 keymap("n", '<A-j>', '<C-w>j', opts)
-keymap("n", '<A-k>', '<C-w>k', opts)
 keymap("n", '<A-l>', '<C-w>l', opts)
+keymap("n", '<A-k>', '<C-w>k', opts)
 
 -- clear highlights
 keymap("n", '<leader><ESC>', ':noh<CR>', opts)
@@ -36,4 +36,12 @@ keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>s", ":TZFocus<CR>", opts)
 
 -- hop plugin
-keymap("", "f", "<cmd>lua require'hop'.hint_char1()<cr>", opts)
+keymap("", "s", "<cmd>lua require'hop'.hint_char1()<cr>", opts)
+
+-- LSP
+
+keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+
+-- Project specific
+keymap("n", "<leader>bt", "<cmd>lua require('utils').useTabs()<cr>", opts)
+keymap("n", "<leader>bs", "<cmd>lua require('utils').useSpaces()<cr>", opts)

@@ -50,4 +50,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # add dir for user scoped binaries
 export PATH="$HOME/bin:$PATH"
 
+# add dir for cargo installed binaries
+export PATH="$HOME/bin/bin:$PATH"
+
+export CARGO_INSTALL_ROOT="$HOME/bin"
+
 eval "$(starship init zsh)"

@@ -77,4 +77,5 @@ nnoremap('<leader>ps', [[<Cmd>lua require('telescope.builtin').git_status()<CR>]
 nnoremap('<leader>pk', [[<Cmd>lua require('telescope.builtin').keymaps()<CR>]])
 nnoremap('<leader>pc', [[<Cmd>lua require('telescope.builtin').spell_suggest()<CR>]])
 nnoremap('<leader>pt', [[<Cmd>lua require('telescope.builtin').builtin()<CR>]])
+nnoremap('<leader>pq', [[<Cmd>lua require('telescope.builtin').quickfix()<CR>]])
 -- TODO: Configure LSP mappings

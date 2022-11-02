@@ -4,6 +4,7 @@ local use = packer.use
 use 'wbthomason/packer.nvim'
 
 use 'arcticicestudio/nord-vim'
+use 'folke/tokyonight.nvim'
 
 use { -- A collection of common configurations for Neovim's built-in language server client
   'neovim/nvim-lspconfig',
@@ -93,3 +94,7 @@ use {
     require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
   end
 }
+
+use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+  require("toggleterm").setup()
+end}

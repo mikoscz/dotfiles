@@ -13,7 +13,7 @@ local options = {
   number = true,                           -- set numbered lines
   numberwidth = 4,                         -- set number column width
   pumheight = 10,                          -- pop up menu height
-  relativenumber = false,                  -- set relative numbered lines
+  relativenumber = true,                   -- set relative numbered lines
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   showtabline = 2,                         -- always show tabs
@@ -27,7 +27,7 @@ local options = {
   swapfile = false,                        -- creates a swapfile
   tabstop = 2,                             -- insert 2 spaces for a tab
   termguicolors = true,                    -- set term gui colors
-  timeoutlen = 1000,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   wrap = false,                            -- display lines as one long line
@@ -38,4 +38,7 @@ for key, value in pairs(options) do
   vim.opt[key] = value
 end
 
+require('utils').useTabs()
+
 vim.g.mapleader = ' '
+
