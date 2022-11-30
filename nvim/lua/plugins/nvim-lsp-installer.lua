@@ -4,7 +4,7 @@ local servers = {
   "emmet_ls", -- for HTML snippets
   "tsserver", -- for JS
   -- "ember", -- for Ember
-  -- "gopls", -- for Ember
+  "gopls", -- for Ember
   "rust_analyzer",      -- for Rust
   -- "pyright", -- for Python
   -- "clangd",             -- for C/C++
@@ -95,9 +95,9 @@ lspconfig.emmet_ls.setup {
 --   on_attach = on_attach,
 -- }
 
--- lspconfig.gopls.setup {
---   on_attach = on_attach,
--- }
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+}
 
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,

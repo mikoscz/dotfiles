@@ -45,3 +45,5 @@ keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 -- Project specific
 keymap("n", "<leader>bt", "<cmd>lua require('utils').useTabs()<cr>", opts)
 keymap("n", "<leader>bs", "<cmd>lua require('utils').useSpaces()<cr>", opts)
+
+keymap("n", "<leader>f", "<cmd>%! prettier %", opts)
